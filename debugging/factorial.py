@@ -1,12 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import sys
 
 def factorial(n):
-    result = 1
-    while n > 1:
-        result *= n
-        n -= 1
-    return result
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
 
-f = factorial(int(sys.argv[1]))
-print(f)
+if __name__ == "__main__":
+    n = int(sys.argv[1])
+    print(factorial(n))
